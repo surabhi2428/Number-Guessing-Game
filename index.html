@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="guessstyle.css">
+
+    <title>guess dies no.</title>
+   
+</head>
+<body>
+    <div id="section1">
+          <h2 style="color: blueviolet;">LET START </h2>
+          <br>
+
+          <h2 >CLICK ON GENERATE A NO.</h2>
+        <button  onclick="add()"id="btn">GENERATE A NO.</button>
+        
+        <img src="https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/finger-spacing-hand_ver_1.png"alt="error">
+    </div>
+    <div id="section2">
+        <img src="https://www.teachingenglish.org.uk/sites/teacheng/files/images/RS4448_LES_A0_img_0186_01-web_4.jpg" alt=" error">
+        <p>Guess the no. between 1 to 6</p>
+        <br>
+        <input  type="text" id="input" placeholder=" ENTER A NO.">
+        <br>
+        <button onclick="check()">check</button>
+        <br> 
+        <br>
+    </div>
+    <div id="section3">
+<img src="https://media1.tenor.com/images/2fcf7e0bdb5ed04fcb5092cf2479907e/tenor.gif?itemid=4717877" alt="">
+<h2> GENERATING NUMBER....</h2>
+    </div>
+    <script>
+        let Num
+        const generate=()=>{
+            let n1= Math.random()
+            let n2=n1*10
+            n2=Math.trunc(n2)
+            n2=(n2%6)+1
+            Num=n2
+            console.log(Num)
+        }
+       const add=()=>{
+              document.querySelector("#section1").style.display="none"
+              document.querySelector("#section2").style.display="none"
+              document.querySelector("#section3").style.display="block"
+              setTimeout(()=>{
+                  generate()
+                  document.querySelector("#section1").style.display="none"
+                  document.querySelector("#section2").style.display="block"
+                  document.querySelector("#section3").style.display="none"
+
+              },3000)
+
+        }
+        const check=()=>{
+            let value=document.querySelector("input").value
+            if(value==Num){
+                alert("you won the game ")
+            }
+            else{
+                alert("you lose! better then next time ")
+            }
+        }
+
+    </script>
+</body>
+</html>
